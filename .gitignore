@@ -56,7 +56,12 @@ node_modules
 # My Setting
 /Assets/Plugins/
 /Assets/Standard Assets/
-/Assets/KinectView/
+
+/Assets/KinectView/*
+!/Assets/KinectView/Scripts/
+/Assets/KinectView/Scripts/*
+!Assets/KinectView/Scripts/BodySourceView.*
+
 /Assets/Tests/
 
-TODO.md
+/TODO.md
