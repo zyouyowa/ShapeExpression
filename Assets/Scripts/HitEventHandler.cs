@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 
-public class HitEventHandler : MonoBehaviour {
-    
+public class HitEventHandler : MonoBehaviour
+{
+
     public delegate void OnHitEnterEventHandler(Collider col);
     public event OnHitEnterEventHandler OnHitEnter;
     public delegate void OnHitStayEventHandler(Collider col);
@@ -9,13 +10,16 @@ public class HitEventHandler : MonoBehaviour {
     public delegate void OnHitExitEventHandler(Collider col);
     public event OnHitExitEventHandler OnHitExit;
 
-    void OnTriggerEnter(Collider other) {
+    void OnTriggerEnter(Collider other)
+    {
         OnHitEnter(other);
     }
-    void OnTriggerStay(Collider other) {
+    void OnTriggerStay(Collider other)
+    {
         OnHitStay(other);
     }
-    void OnTriggerExit(Collider other) {
+    void OnTriggerExit(Collider other)
+    {
         OnHitExit(other);
     }
 }
