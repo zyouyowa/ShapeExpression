@@ -11,10 +11,13 @@ public class HandManager : MonoBehaviour {
 
 	void Start (){
 		_handObj_R = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-		_handObj_L = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-		_handObj_R.GetComponent<BoxCollider>().enabled = false;
-		_handObj_L.GetComponent<BoxCollider>().enabled = false;
+		_handObj_R.GetComponent<BoxCollider>().isTrigger = true;
+		_handObj_R.AddComponent<HitEventHandler>();
 		_handObj_R.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+
+		_handObj_L = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+		_handObj_L.GetComponent<BoxCollider>().isTrigger = true;
+		_handObj_L.AddComponent<HitEventHandler>();
 		_handObj_L.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
 	}
 	
